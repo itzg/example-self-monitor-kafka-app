@@ -1,0 +1,13 @@
+spring:
+  kafka:
+    consumer:
+      group-id: self-monitorer
+    bootstrap-servers: localhost:29092
+    properties:
+      metric.reporters: me.itzg.selfmonitorkafkaproducer.KafkaSelfMetricReporter
+management:
+  metrics:
+    export:
+      influx:
+        step: 10s
+        db: kafka-app
